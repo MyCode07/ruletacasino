@@ -1,0 +1,134 @@
+.hero {
+    position: relative;
+
+    .bgc {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        width: 100%;
+        height: calc(100% - 1px);
+        object-fit: cover;
+    }
+
+    .fishka {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: -28px;
+        pointer-events: none;
+
+        height: 634px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 125%;
+        height: 83px;
+        position: relative;
+        z-index: 1;
+
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin-top: -13px;
+
+        clip-path: ellipse(50% 100% at 50% 100%);
+        background-color: #fff;
+    }
+
+    // .hero__container
+
+    &__container {
+    }
+
+    // .hero__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+
+        padding-top: 106px;
+        padding-bottom: 116px;
+
+        @media (max-width: 768px) {
+            padding-top: 103px;
+            padding-bottom: 75px;
+        }
+    }
+
+    // .hero__left
+
+    &__left {
+        p {
+            margin-top: 15px;
+            max-width: 808px;
+            color: #fff;
+            font-family: Nunito;
+            font-weight: 500;
+
+            @include adaptive-value("font-size", 20, 18, 1);
+            @include adaptive-value("margin-bottom", 50, 30, 1);
+
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+        }
+
+        h1 {
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+        }
+
+        div {
+            @media (min-width: 769px) {
+                display: flex;
+                align-items: center;
+            }
+
+            & > :first-child {
+                margin-right: 20px;
+
+                @media (max-width: 768px) {
+                    margin-right: auto;
+                    margin-bottom: 12px;
+                }
+            }
+
+            a {
+                max-width: 270px;
+
+                @media (max-width: 768px) {
+                    max-width: 75%;
+                    margin-inline: auto;
+                }
+            }
+        }
+    }
+
+    // .hero__right
+
+    &__right {
+    }
+
+    .hero-flame {
+        mix-blend-mode: screen;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        height: 551px;
+    }
+
+    .hero-girl {
+        height: 551px;
+    }
+}
