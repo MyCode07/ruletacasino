@@ -29,6 +29,9 @@
 // load error 404
 @import "common/404";
 
+// load accordeon
+@import "common/accordeon";
+
 // load hero
 @import "parts/hero";
 
@@ -38,9 +41,26 @@
 // load casino-slider
 @import "parts/casino-slider";
 
+// load flex
+@import "parts/flex";
 
 // load passo
 @import "parts/passo";
 
 // load payment
 @import "parts/payment";
+
+// load roulette-slider
+@import "parts/roulette-slider";
+
+// load dark-slider
+@import "parts/dark-slider";
+
+// load cards
+@import "parts/cards";
+
+// load grid
+@import "parts/grid";
+
+// load faq
+@import "parts/faq";
