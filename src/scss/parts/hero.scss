@@ -118,18 +118,137 @@
     // .hero__right
 
     &__right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 769px) {
+            width: 50%;
+            margin-left: 35px;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: 25px;
+        }
+
+        // .hero__right-casino
+
+        &-casino {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            img {
+                width: 100%;
+                max-width: 297px;
+                margin-bottom: 20px;
+
+                @media (max-width: 768px) {
+                    max-width: 349px;
+                }
+            }
+
+            label {
+                display: block;
+                color: #fff;
+                text-align: center;
+                font-family: Montserrat;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+
+                @include adaptive-value("font-size", 24, 18, 1);
+
+                @media (max-width: 768px) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            span {
+                display: block;
+                color: #fff;
+                text-align: center;
+                font-family: Montserrat;
+                margin-bottom: 25px;
+
+                @include adaptive-value("font-size", 20, 18, 1);
+
+                @media (max-width: 768px) {
+                    margin-bottom: 25px;
+                }
+            }
+
+            a {
+                max-width: 221px;
+
+                @include adaptive-value("height", 54, 39, 1);
+
+                @media (max-width: 768px) {
+                    border-radius: 5px;
+                    max-width: 167px;
+                }
+            }
+        }
+
+        &-roulette {
+            h3 {
+                font-size: 16px;
+                font-family: Montserrat;
+                font-weight: 700;
+                color: #fff;
+            }
+
+            p {
+                color: #fff;
+                margin-top: 5px;
+                margin-bottom: 20px;
+                font-size: 16px;
+                font-family: Montserrat;
+            }
+
+            // .hero__right-roulette-row
+
+            &-row {
+                display: flex;
+
+                & > :first-child {
+                    margin-right: 5px;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        margin-bottom: 13px;
+                        max-width: 297px;
+                        width: 100%;
+                    }
+
+                    a {
+                        width: 100%;
+                        max-width: 221px;
+                        height: 54px;
+                    }
+                }
+            }
+        }
     }
 
-    .hero-flame {
-        mix-blend-mode: screen;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 1;
-        height: 551px;
-    }
+    // .hero-page
 
-    .hero-girl {
-        height: 551px;
+    &-page {
+        .hero__body {
+            @media (max-width: 768px) {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .fishka {
+            height: 669px;
+        }
     }
 }

@@ -11,6 +11,68 @@
     &__body {
     }
 
+    // .flex__check
+
+    &__check {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        ol {
+            margin-bottom: 50px;
+
+            h3 {
+                margin-bottom: 15px;
+                font-size: 24px;
+                font-family: Oswald;
+                font-weight: 700;
+            }
+
+            li {
+                color: #262626;
+                @include adaptive-value("font-size", 20, 18, 1);
+
+                font-family: Nunito;
+                padding-left: 42px;
+                margin-bottom: 15px;
+
+                span {
+                    font-weight: 900;
+                }
+
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 27px;
+                    height: 27px;
+                    background-image: url("@img/game-catalog/chekced.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+
+            .unchecked {
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 27px;
+                    height: 27px;
+                    background-image: url("@img/game-catalog/unchecked.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
     // .flex__flex
 
     &__flex {
@@ -45,6 +107,70 @@
 
         .accordion {
             @include adaptive-value("margin-top", 50, 30, 1);
+        }
+
+        h2 {
+            @include adaptive-value("margin-bottom", 50, 30, 1);
+        }
+
+        h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include adaptive-value("font-size", 24, 20, 1);
+        }
+
+        img {
+            margin-top: 25px;
+            max-width: 100%;
+
+            @media (max-width: 768px) {
+                margin-top: 20px;
+            }
+        }
+
+        ol {
+            &:not(:last-of-type) {
+                margin-bottom: 40px;
+            }
+
+            & > :not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            &[data-list="number"] {
+                counter-reset: num;
+
+                li {
+                    counter-increment: num;
+
+                    &:before {
+                        content: counter(num) ".";
+                    }
+                }
+            }
+
+            &[data-list="marker"] {
+                li {
+                    &:before {
+                        content: "";
+                        border-radius: 50%;
+                        background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
+                        margin-top: 4px;
+                    }
+                }
+            }
+
+            li {
+                display: flex;
+
+                &:before {
+                    margin-right: 12px;
+                    width: 9px;
+                    height: 9px;
+                    flex: 0 0 auto;
+                }
+            }
         }
     }
 

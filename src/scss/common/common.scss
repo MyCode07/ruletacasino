@@ -52,6 +52,9 @@ main {
 }
 
 section {
+    &:last-of-type {
+        margin-bottom: 0 !important;
+    }
 }
 
 h1,
@@ -241,6 +244,45 @@ table {
 
             & > :first-child {
                 color: #0085ff;
+            }
+        }
+    }
+}
+
+.check-list {
+    margin-bottom: 70px;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    ol {
+        h3 {
+            margin-bottom: 15px;
+        }
+
+        li {
+            color: #262626;
+            font-size: 20px;
+            font-family: Nunito;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 42px;
+
+            &:after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 27px;
+                height: 27px;
+                background-image: url("@img/game-catalog/chekced.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            span {
+                font-weight: 900;
             }
         }
     }
