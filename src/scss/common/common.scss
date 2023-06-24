@@ -70,6 +70,23 @@ h2 {
     color: #262626;
 }
 
+a {
+    color: inherit;
+}
+
+img,
+svg {
+    display: block;
+}
+
+table,
+thead,
+tbody,
+tr,
+td {
+    display: block;
+}
+
 ._button {
     display: flex;
     align-items: center;
@@ -81,7 +98,7 @@ h2 {
     color: #fff;
 
     @include adaptive-value("font-size", 20, 16, 1);
-    @include adaptive-value("height", 96, 52, 1);
+    @include adaptive-value("height", 69, 52, 1);
     width: 100%;
 
     font-family: Oswald;
@@ -95,28 +112,136 @@ h2 {
     &-gradient {
         background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
         border-color: transparent;
+    }
 
+    // ._button-backdrop
+
+    &-backdrop {
         &:after {
-            z-index: -1;
             position: absolute;
             content: "";
-            left: 50%;
-            transform: translate(-50%, 0);
-            bottom: 0;
-            width: 174px;
-            height: 26px;
-            border-radius: 15.5px;
-            background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
-            filter: blur(52px);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(2px);
+            z-index: -1;
         }
     }
 }
 
-a {
-    color: inherit;
+._text {
+    font-size: 20px;
+    font-family: Nunito;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+
+    a {
+        color: #0085ff;
+        border-bottom: 1px solid #0085ff;
+    }
 }
 
-img,
-svg {
-    display: block;
+table {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 85px 0px rgba(200, 200, 200, 0.5);
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        margin-left: -10px;
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: 20.6% 27.6% 1fr;
+    }
+
+    td {
+        flex: 1 1 auto;
+        background-color: #fff;
+    }
+
+    p {
+        padding: 1em;
+    }
+
+    thead tr > :not(:first-child),
+    tbody tr > :not(:first-child) {
+        padding-left: 6.77vw;
+
+        border-left: 1px solid #f3f3f3;
+    }
+
+    @media (max-width: 1200px) {
+        thead tr > :not(:first-child),
+        tbody tr > :not(:first-child) {
+            padding-left: 30px;
+        }
+
+        tr {
+            grid-template-columns: 25% 30% 1fr;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        thead tr > :not(:first-child),
+        tbody tr > :not(:first-child) {
+            padding-left: 0;
+        }
+
+        tr {
+            grid-template-columns: 30% 30% 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        tr {
+            grid-template-columns: 27% 33% 1fr;
+        }
+    }
+
+    thead {
+        p {
+            color: #484848;
+            font-family: Oswald;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include adaptive-value("font-size", 20, 16, 1);
+
+            @media (max-width: 768px) {
+                padding: 15px 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            td {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    tbody {
+        p {
+            font-family: Montserrat;
+            @include adaptive-value("font-size", 20, 14, 1);
+
+            @media (max-width: 768px) {
+                padding: 5px 10px;
+            }
+        }
+
+        tr {
+            border-top: 1px solid #f3f3f3;
+
+            & > :first-child {
+                color: #0085ff;
+            }
+        }
+    }
 }
