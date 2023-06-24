@@ -1,0 +1,280 @@
+.category {
+    .hero {
+        // .hero__container
+
+        &__container {
+        }
+
+        // .hero__body
+
+        &__body {
+            @media (max-width: 992px) {
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        // .hero__left
+
+        &__left {
+            @media (max-width: 992px) {
+                div {
+                    justify-content: center;
+                }
+            }
+        }
+
+        // .hero__right
+
+        &__right {
+            padding-right: 194px;
+            @include adaptive-value("padding-right", 194, -194, 1);
+
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            text-align: center;
+            color: #fff;
+            text-align: center;
+
+            .mobile-img {
+                display: none;
+            }
+
+            @media (max-width: 992px) {
+                margin-left: 0;
+                margin-bottom: 25px;
+                padding-right: 0;
+
+                .desktop-img {
+                    display: none;
+                }
+
+                .mobile-img {
+                    display: block;
+                }
+            }
+
+            h3 {
+                @include adaptive-value("font-size", 24, 18, 1);
+                font-family: Montserrat;
+                font-weight: 700;
+                text-transform: uppercase;
+                @include adaptive-value("margin-top", 20, 15, 1);
+                @include adaptive-value("margin-top", 10, 5, 1);
+            }
+
+            p {
+                @include adaptive-value("font-size", 20, 18, 1);
+                font-family: Montserrat;
+                text-transform: lowercase;
+                @include adaptive-value("margin-bottom", 25, 20, 1);
+            }
+        }
+    }
+    .bgc {
+    }
+    .fishka {
+        left: -10%;
+        top: 100px;
+    }
+}
+.category-article {
+    .main {
+        // .main__container
+
+        &__container {
+        }
+
+        // .main__body
+
+        &__body {
+        }
+
+        // .main__top
+
+        &__top {
+        }
+
+        // .main__sidebar
+
+        &__sidebar {
+            margin-left: 20px;
+            // .main__sidebar-open
+
+            &-open {
+            }
+
+            // .main__sidebar-body
+
+            &-body {
+            }
+        }
+
+        // .main__flex
+
+        &__flex {
+        }
+
+        // .main__content
+
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            .category-more {
+                display: flex;
+                margin-inline: auto;
+                width: 270px;
+                height: 69px;
+                margin-top: 67px;
+            }
+
+            article {
+                position: relative;
+                display: block;
+                height: fit-content;
+                width: 100%;
+            }
+
+            & > :first-child {
+                max-width: 520px;
+                .main__content-image {
+                    height: 163px;
+                }
+            }
+
+            & > :nth-child(2) {
+                max-width: 725px;
+
+                p {
+                    max-width: 385px;
+                    width: 100%;
+                }
+            }
+
+            & > :nth-child(4) {
+                .main__content-image {
+                    height: 372px;
+                }
+            }
+
+            & > :nth-child(8) {
+                max-width: 372px;
+            }
+            & > :nth-child(9) {
+                max-width: 395px;
+            }
+
+            & > :nth-child(10),
+            & > :nth-child(7) {
+                height: 163px;
+            }
+
+            & > :nth-child(4),
+            & > :nth-child(6),
+            & > :nth-child(11) {
+                max-width: 830px;
+            }
+
+            & > :nth-child(11),
+            & > :nth-child(6),
+            & > :nth-child(2) {
+                .main__content-image {
+                    height: 246px;
+                }
+            }
+
+            & > :nth-child(12),
+            & > :nth-child(8),
+            & > :nth-child(10),
+            & > :nth-child(3),
+            & > :nth-child(7),
+            & > :nth-child(5) {
+                max-width: 415px;
+            }
+
+            & > :nth-child(12),
+            & > :nth-child(5),
+            & > :nth-child(9) {
+                .main__content-image {
+                    height: 298px;
+                }
+            }
+
+            & > :nth-child(3) {
+                top: -83px;
+            }
+
+            & > :nth-child(5) {
+                top: -157px;
+            }
+
+            & > :nth-child(7) {
+                top: -108px;
+            }
+
+            & > :nth-child(10) {
+                top: -317px;
+            }
+
+            & > :nth-child(12) {
+                top: -374px;
+            }
+
+            // .main__content-image
+
+            &-image {
+                display: block;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            // .main__content-info
+
+            &-info {
+                padding-left: 15px;
+                padding-right: 15px;
+                @include adaptive-value('padding-bottom', 15, 20, 1);
+                
+                border-radius: 5px;
+                background: #fff;
+                box-shadow: 0px 0px 85px 0px rgba(200, 200, 200, 0.25);
+
+                & > :first-child {
+                    color: #262626;
+                    @include adaptive-value("font-size", 32, 24, 1);
+                    font-family: Oswald;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding-top: 15px;
+                    @include adaptive-value("margin-bottom", 10, 5, 1);
+                    display: block;
+                    line-height: 1.4;
+                }
+
+                p {
+                    @include adaptive-value("margin-bottom", 19, 30, 1);
+
+                    color: #262626;
+                    font-size: 18px;
+                    font-family: Nunito;
+                    line-height: 1.4;
+                }
+
+                & > :last-child {
+                    width: 187px;
+                    @include adaptive-value("height", 62, 50, 1);
+                    @include adaptive-value("font-size", 16, 17, 1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.game-catalog {
+    .bgc {
+        top: -1px;
+    }
+
+    .hero {
+        // .hero__container
+
+        &__container {
+        }
+
+        // .hero__body
+
+        &__body {
+        }
+
+        // .hero__left
+
+        &__left {
+            p {
+                max-width: 557px;
+                width: 100%;
+            }
+        }
+
+        // .hero__right
+
+        &__right {
+            display: block;
+
+            h3,
+            p {
+                text-align: left;
+            }
+
+            // .hero__right-row
+
+            &-row {
+                display: flex;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        margin-bottom: 13px;
+                    }
+
+                    a {
+                        width: 221px;
+                        height: 54px;
+                    }
+                }
+            }
+
+            // .hero__right-first
+
+            &-first {
+                margin-right: 5px;
+            }
+
+            // .hero__right-second
+
+            &-second {
+            }
+        }
+    }
+}
+ 
