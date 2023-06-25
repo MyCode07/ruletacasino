@@ -1,6 +1,14 @@
 .main {
     @include adaptive-value("margin-bottom", 90, 40, 1);
 
+    &.error-404 {
+        @include adaptive-value("margin-top", 70, 15, 1);
+
+        h1 {
+            color: inherit;
+        }
+    }
+
     // .main__container
 
     &__container {
@@ -53,7 +61,7 @@
             top: 0;
             z-index: 1;
 
-            transform: translate(100%, 0);
+            transform: translate(120%, 0);
             transition: all 0.3s ease 0s;
 
             &._active {
@@ -190,6 +198,10 @@
 
     &__content {
         flex: 1 1 auto;
+
+        h2 {
+            @include adaptive-value("margin-bottom", 50, 30, 1);
+        }
 
         // .main__content-casinos
 
@@ -332,11 +344,38 @@
                             margin-bottom: 30px;
                         }
                     }
+
+                    // .casino-buttons
+
+                    &-buttons {
+                        display: flex;
+                        align-items: center;
+
+                        @media (max-width: 768px) {
+                            flex-direction: column;
+                        }
+
+                        & > :not(:first-child) {
+                            margin-left: 20px;
+
+                            @media (max-width: 768px) {
+                                margin-left: 0;
+                                margin-top: 10px;
+                            }
+                        }
+
+                        a {
+                            max-width: 314px;
+                            @include adaptive-value("font-size", 20, 16, 1);
+
+                            @media (max-width: 768px) {
+                                max-width: 268px;
+                            }
+                        }
+                    }
                 }
 
                 .play {
-                    max-width: 314px;
-                    @include adaptive-value("font-size", 20, 16, 1);
                 }
             }
 
@@ -384,6 +423,33 @@
                 @media (max-width: 768px) {
                     max-width: 203px;
                 }
+            }
+        }
+
+        // .main__content-betway
+
+        &-betway {
+            img {
+                max-width: 100%;
+                @include adaptive-value("margin-top", 50, 30, 1);
+                border-radius: 10px;
+            }
+        }
+
+        // .main__content-text
+
+        &-text {
+            p {
+                @include adaptive-value("font-size", 20, 18, 1);
+                font-family: Nunito;
+            }
+
+            h3,
+            h4,
+            h5,
+            h6 {
+                @include adaptive-value("font-size", 24, 20, 1);
+                font-weight: 700;
             }
         }
     }

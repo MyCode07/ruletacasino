@@ -24,7 +24,8 @@
 @import "common/footer";
 
 // load footer
-@import "common/menu";
+@import "common/to-top";
+
 
 // load error 404
 @import "common/404";
@@ -59,8 +60,6 @@
 // load cards
 @import "parts/cards";
 
- 
-
 // load faq
 @import "parts/faq";
 
@@ -69,3 +68,6 @@
 
 // load text
 @import "parts/text";
+
+// load game-popup
+@import "parts/game-popup";

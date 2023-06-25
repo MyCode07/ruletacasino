@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    margin-bottom: 70px;
+    @include adaptive-value("margin-bottom", 70, 15, 1);
 
     .bgc {
         position: absolute;
@@ -72,10 +72,7 @@
             margin-top: 15px;
             max-width: 808px;
             color: #fff;
-            font-family: Nunito;
-            font-weight: 500;
 
-            @include adaptive-value("font-size", 20, 18, 1);
             @include adaptive-value("margin-bottom", 50, 30, 1);
 
             @media (max-width: 768px) {
@@ -131,6 +128,17 @@
             margin-bottom: 25px;
         }
 
+        a {
+            max-width: 221px;
+
+            @include adaptive-value("height", 54, 39, 1);
+
+            @media (max-width: 768px) {
+                border-radius: 5px;
+                max-width: 167px;
+            }
+        }
+
         // .hero__right-casino
 
         &-casino {
@@ -178,33 +186,32 @@
                     margin-bottom: 25px;
                 }
             }
-
-            a {
-                max-width: 221px;
-
-                @include adaptive-value("height", 54, 39, 1);
-
-                @media (max-width: 768px) {
-                    border-radius: 5px;
-                    max-width: 167px;
-                }
-            }
         }
 
         &-roulette {
-            h3 {
+            span {
                 font-size: 16px;
                 font-family: Montserrat;
                 font-weight: 700;
                 color: #fff;
+                display: block;
+
+                @media (max-width: 768px) {
+                    text-align: center;
+                }
             }
 
-            p {
+            label {
+                display: block;
                 color: #fff;
                 margin-top: 5px;
                 margin-bottom: 20px;
                 font-size: 16px;
                 font-family: Montserrat;
+
+                @media (max-width: 768px) {
+                    text-align: center;
+                }
             }
 
             // .hero__right-roulette-row
@@ -227,12 +234,19 @@
                         max-width: 297px;
                         width: 100%;
                     }
+                }
+            }
+        }
 
-                    a {
-                        width: 100%;
-                        max-width: 221px;
-                        height: 54px;
-                    }
+        // .hero__right-review
+
+        &-review {
+            img {
+                max-width: 100%;
+
+                @media (max-width: 768px) {
+                    max-width: 65.6%;
+                    margin-inline: auto;
                 }
             }
         }
@@ -249,6 +263,58 @@
 
         .fishka {
             height: 669px;
+        }
+    }
+
+    // .casino-review
+
+    &.casino-review {
+        .hero__left {
+            div {
+                span {
+                    display: block;
+                    color: #fff;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    @include adaptive-value("font-size", 24, 20, 1);
+                }
+
+                label {
+                    display: block;
+
+                    color: #fff;
+                    font-size: 16px;
+                    font-family: Montserrat;
+                }
+
+                &.labels {
+                    margin-top: 20px;
+
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                        text-align: center;
+
+                        & > :first-child {
+                            margin-right: 20px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+
+                    a {
+                        margin-bottom: 0;
+                        max-width: 203px;
+                        margin-inline: 0;
+                        margin-right: 20px;
+                    }
+                }
+            }
         }
     }
 }

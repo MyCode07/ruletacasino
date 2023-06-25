@@ -57,20 +57,17 @@ section {
     }
 }
 
-h1,
-h2 {
+h1 {
     @include adaptive-value("font-size", 40, 24, 1);
-    font-family: Oswald;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-h1 {
     color: #fff;
 }
 
 h2 {
-    color: #262626;
+    @include adaptive-value("font-size", 40, 28, 1);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 a {
@@ -104,7 +101,6 @@ td {
     @include adaptive-value("height", 69, 52, 1);
     width: 100%;
 
-    font-family: Oswald;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -283,6 +279,66 @@ table {
 
             span {
                 font-weight: 900;
+            }
+        }
+    }
+}
+
+.breadcambs {
+    @include adaptive-value("margin-bottom", 52, 30, 1);
+
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media (max-width: 425px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        & > :not(:last-child) {
+            margin-right: 44px;
+
+            @media (max-width: 425px) {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+        }
+
+        li {
+            a {
+                color: #262626;
+                font-family: Oswald;
+                font-weight: 700;
+                text-transform: uppercase;
+                @include adaptive-value("font-size", 24, 16, 1);
+
+                display: flex;
+                align-items: center;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 0 0 auto;
+                    border-radius: 50%;
+                    background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
+
+                    margin-left: 20px;
+
+                    @include adaptive-value("width", 40, 23, 1);
+                    @include adaptive-value("height", 40, 23, 1);
+
+                    @media (max-width: 768px) {
+                        margin-left: 16px;
+                    }
+
+                    svg {
+                        width: 32.5%;
+                        margin-left: 10%;
+                    }
+                }
             }
         }
     }
