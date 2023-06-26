@@ -87,6 +87,18 @@ td {
     display: block;
 }
 
+._logo {
+    position: relative;
+
+    .ellipse {
+        width: 87%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 ._button {
     display: flex;
     align-items: center;
@@ -105,12 +117,28 @@ td {
     text-align: center;
     text-transform: uppercase;
     position: relative;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
+            border-color: transparent;
+        }
+    }
 
     // ._button-gradient
 
     &-gradient {
         background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
         border-color: transparent;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: transparent;
+                border-color: #ff008a;
+                color: #ff008a;
+            }
+        }
     }
 
     // ._button-backdrop
@@ -140,7 +168,14 @@ td {
 
     a {
         color: #0085ff;
-        border-bottom: 1px solid #0085ff;
+        border-bottom: 1px solid currentColor;
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #ff008a;
+            }
+        }
     }
 }
 

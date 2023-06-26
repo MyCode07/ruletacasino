@@ -11,9 +11,37 @@
                 grid-template-rows: 1fr;
             }
 
-            span {
-                &:after {
-                    transform: translate(0, -50%) rotate(0deg);
+            .accordion__item-title {
+                p {
+                    color: #ff008a;
+                }
+
+                span {
+                    &:after {
+                        transform: translate(0, -50%) rotate(0deg);
+                    }
+
+                    &:before,
+                    &:after {
+                        background-color: #ff008a;
+                    }
+                }
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .accordion__item-title {
+                    p {
+                        color: #ff008a;
+                    }
+
+                    span {
+                        &:before,
+                        &:after {
+                            background-color: #ff008a;
+                        }
+                    }
                 }
             }
         }

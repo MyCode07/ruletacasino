@@ -42,7 +42,7 @@
             margin-bottom: 36px;
         }
 
-        img {
+        .logo {
             @include adaptive-value("width", 220, 182, 1);
         }
     }
@@ -91,6 +91,14 @@
                     color: #9a9a9a;
                     font-size: 20px;
                     font-family: Montserrat;
+
+                    transition: all 0.3s ease 0s;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
 
                     @media (max-width: 768px) {
                         text-align: center;

@@ -77,9 +77,23 @@
 
         article {
             height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
 
             @media (max-width: 768px) {
                 height: 133px;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+
+                    h3{
+                        color: #ff008a;
+                    }
+                }
             }
 
             a {
@@ -109,6 +123,7 @@
                     top: 0;
                     width: 100%;
                     height: 100%;
+                    transition: all 0.3s ease 0s;
                 }
 
                 h3 {
@@ -118,6 +133,7 @@
                     font-size: 24px;
                     font-weight: 700;
                     text-transform: uppercase;
+                    transition: all 0.3s ease 0s;
                 }
             }
         }

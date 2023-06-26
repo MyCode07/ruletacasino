@@ -1,16 +1,28 @@
-import { Swiper, Autoplay } from "swiper";
+import { Swiper, Autoplay, Lazy } from "swiper";
 
 const casinoSlider = document.querySelector('.casino-slider .swiper');
 const casinoSliderSlides = document.querySelectorAll('.casino-slider .swiper .swiper-slide');
 
 if (casinoSliderSlides.length) {
     new Swiper(casinoSlider, {
-        modules: [Autoplay],
+        modules: [Autoplay, Lazy],
         loop: true,
         slidesPerView: 'auto',
         autoplay: {
-
+            delay: 1000,
+            pauseOnMouseEnter: true,
         },
+        speed: 700,
+
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadOnTransitionStart: false
+        },
+        watchSlidesProgress: true,
+        watchOverflow: true,
+        grabCursor: true,
+
         breakpoints: {
             300: {
                 spaceBetween: 15,
@@ -34,8 +46,20 @@ if (rouletteSliderSlides.length) {
         loop: true,
         slidesPerView: 'auto',
         autoplay: {
-
+            delay: 1000,
+            pauseOnMouseEnter: true,
         },
+        speed: 700,
+
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadOnTransitionStart: false
+        },
+        watchSlidesProgress: true,
+        watchOverflow: true,
+        grabCursor: true,
+
         breakpoints: {
             300: {
                 spaceBetween: 15,
@@ -59,8 +83,20 @@ if (darkSliderSlides.length) {
         loop: true,
         slidesPerView: 'auto',
         autoplay: {
-
+            delay: 1000,
+            pauseOnMouseEnter: true,
         },
+        speed: 700,
+
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadOnTransitionStart: false
+        },
+        watchSlidesProgress: true,
+        watchOverflow: true,
+        grabCursor: true,
+
         breakpoints: {
             300: {
                 spaceBetween: 15,

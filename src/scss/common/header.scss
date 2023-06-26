@@ -72,7 +72,7 @@
     &__logo {
         display: block;
 
-        img {
+        .logo {
             @include adaptive-value("width", 177, 69, 1);
         }
     }
