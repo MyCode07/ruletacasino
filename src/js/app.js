@@ -12,3 +12,4 @@ import './utils/popup.js';
 import './utils/accordeon.js';
 import './utils/replace.js';
 import './utils/lazyImages.js';
+import './utils/breadcrumbs.js';

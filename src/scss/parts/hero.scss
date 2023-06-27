@@ -230,6 +230,10 @@
                     justify-content: center;
 
                     img {
+                        border: solid #fff;
+                        @include adaptive-value("border-width", 7, 3, 1);
+                        border-radius: 10px;
+
                         margin-bottom: 13px;
                         max-width: 297px;
                         width: 100%;

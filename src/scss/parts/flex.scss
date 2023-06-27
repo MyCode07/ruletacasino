@@ -36,11 +36,28 @@
             width: 100%;
         }
 
-        ._text {
+        p {
             margin-top: 15px;
+            margin-bottom: 15px;
+
+            font-size: 20px;
+            font-family: Nunito;
 
             @media (max-width: 768px) {
                 margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            a {
+                color: #0085ff;
+                border-bottom: 1px solid currentColor;
+                transition: all 0.3s ease 0s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #ff008a;
+                    }
+                }
             }
         }
 
@@ -52,7 +69,10 @@
             @include adaptive-value("margin-bottom", 50, 30, 1);
         }
 
-        h3 {
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
             text-transform: uppercase;
 
@@ -62,62 +82,10 @@
         img {
             margin-top: 25px;
             max-width: 100%;
+            height: auto;
 
             @media (max-width: 768px) {
                 margin-top: 20px;
-            }
-        }
-
-        ol {
-            &[data-list="marker"],
-            &[data-list="number"] {
-                @media (min-width: 769px) {
-                    padding-left: 2.6vw;
-                }
-
-                &:not(:last-of-type) {
-                    margin-bottom: 40px;
-                }
-
-                & > :not(:last-child) {
-                    margin-bottom: 10px;
-                }
-
-                li {
-                    &:before {
-                        margin-right: 12px;
-                        width: 9px;
-                        height: 9px;
-                        flex: 0 0 auto;
-                    }
-                }
-            }
-
-            li {
-                display: flex;
-            }
-
-            &[data-list="number"] {
-                counter-reset: num;
-
-                li {
-                    counter-increment: num;
-
-                    &:before {
-                        content: counter(num) ".";
-                    }
-                }
-            }
-
-            &[data-list="marker"] {
-                li {
-                    &:before {
-                        content: "";
-                        border-radius: 50%;
-                        background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
-                        margin-top: 4px;
-                    }
-                }
             }
         }
     }
@@ -173,16 +141,16 @@
             margin-bottom: 30px;
         }
 
+        h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-family: Oswald;
+            font-weight: 700;
+        }
+
         ol {
             &:not(:last-of-type) {
                 @include adaptive-value("margin-bottom", 50, 30, 1);
-            }
-
-            h3 {
-                margin-bottom: 15px;
-                font-size: 24px;
-                font-family: Oswald;
-                font-weight: 700;
             }
 
             li {
@@ -301,7 +269,7 @@
         &-items {
             width: 50%;
 
-            @media (max-width:768px){
+            @media (max-width: 768px) {
                 width: 100%;
             }
 
@@ -356,6 +324,82 @@
 
                         background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
                     }
+                }
+            }
+        }
+    }
+
+    // .flex-content
+
+    &-content {
+        ol,
+        ul {
+            font-size: 20px;
+            font-family: Nunito;
+            margin-bottom: 40px;
+
+            @media (max-width: 768px) {
+                font-size: 18px;
+            }
+
+            @media (min-width: 769px) {
+                padding-left: 2.6vw;
+            }
+
+            & > :not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: #0085ff;
+                border-bottom: 1px solid currentColor;
+                transition: all 0.3s ease 0s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #ff008a;
+                    }
+                }
+            }
+
+            p {
+                margin: 0 !important;
+            }
+
+            li {
+                position: relative;
+                padding-left: 1.2em;
+
+                &:before {
+                    width: 9px;
+                    height: 9px;
+                    flex: 0 0 auto;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+
+        ol {
+            counter-reset: num;
+
+            li {
+                counter-increment: num;
+
+                &:before {
+                    content: counter(num) ".";
+                }
+            }
+        }
+
+        ul {
+            li {
+                &:before {
+                    content: "";
+                    border-radius: 50%;
+                    background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
+                    top: 6px;
                 }
             }
         }
