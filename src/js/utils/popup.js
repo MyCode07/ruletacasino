@@ -29,13 +29,6 @@ if (popupOpenButtons.length) {
                 popupGame.querySelector('iframe').remove();
             }
         })
-
-        popup.addEventListener('click', function (e) {
-            if (e.target.classList.contains('popup')) {
-                popup.classList.remove('_open')
-                document.body.classList.remove('_noscroll');
-            }
-        })
     })
 }
 
