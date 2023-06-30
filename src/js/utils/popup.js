@@ -1,36 +1,38 @@
 const popup = document.querySelector('.popup');
 const popupClose = popup.querySelector('.popup__close');
 const popupFullScreen = popup.querySelector('.popup__header-fullscreen');
-const popupOpenButtons = document.querySelectorAll('.open-popup');
 const popupTitle = popup.querySelector('.popup__header h4');
 const popupGame = popup.querySelector('.popup__body');
 const popupFooter = document.querySelector('.popup__footer');
 const popupFooterToggle = document.querySelector('.popup__footer-toggle');
 
 
-if (popupOpenButtons.length) {
-    popupOpenButtons.forEach(btn => {
-        const game = btn.closest('.casino-slide');
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
+
+    if (targetEl.classList.contains('open-popup')) {
+        e.preventDefault();
+
+        const game = targetEl.closest('.casino-slide');
         const gameTitle = game.querySelector('[data-title]').textContent;
 
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
+        popupTitle.textContent = gameTitle;
+        popup.classList.add('_open');
+        document.body.classList.add('_noscroll');
+    }
+})
 
-            popupTitle.textContent = gameTitle;
-            popup.classList.add('_open');
-            document.body.classList.add('_noscroll');
-        })
+if (popupClose) {
+    popupClose.addEventListener('click', function () {
+        popup.classList.remove('_open');
+        document.body.classList.remove('_noscroll');
 
-        popupClose.addEventListener('click', function () {
-            popup.classList.remove('_open');
-            document.body.classList.remove('_noscroll');
-
-            if (popupGame.querySelector('iframe')) {
-                popupGame.querySelector('iframe').remove();
-            }
-        })
+        if (popupGame.querySelector('iframe')) {
+            popupGame.querySelector('iframe').remove();
+        }
     })
 }
+
 
 if (popupFullScreen) {
     popupFullScreen.addEventListener('click', function (e) {

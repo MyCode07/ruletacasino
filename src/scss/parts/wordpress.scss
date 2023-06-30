@@ -159,7 +159,6 @@
 
     &.is-layout-flex {
         display: flex;
-        justify-content: space-between;
 
         &._revesrse {
             flex-direction: row-reverse;
@@ -186,7 +185,6 @@
         }
 
         img {
-            margin: 0 auto;
             max-width: 100%;
             height: auto;
         }
