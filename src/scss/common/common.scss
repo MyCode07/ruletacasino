@@ -52,9 +52,6 @@ main {
 }
 
 section {
-    &:last-of-type {
-        margin-bottom: 0 !important;
-    }
 }
 
 h1 {
@@ -84,7 +81,7 @@ thead,
 tbody,
 tr,
 td {
-    display: block;
+    // display: block;
 }
 
 ._logo {
@@ -180,66 +177,50 @@ td {
 }
 
 table {
+    width: 100%;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 0px 85px 0px rgba(200, 200, 200, 0.5);
-
-    @media (max-width: 768px) {
-        width: 100vw;
-        margin-left: -10px;
-    }
+    border-collapse: unset;
+    border-spacing: 0;
+    margin-top: 35px;
 
     tr {
-        display: grid;
-        grid-template-columns: 20.6% 27.6% 1fr;
+        // display: flex;
     }
 
     td {
-        flex: 1 1 auto;
-        background-color: #fff;
+        // flex: 1 1 auto;
     }
 
     p {
-        padding: 1em;
+        padding: 1em !important;
+
+        @media (max-width: 768px) {
+            padding: 1em 0.5em !important;
+        }
     }
 
-    thead tr > :not(:first-child),
-    tbody tr > :not(:first-child) {
-        padding-left: 6.77vw;
+    td {
+        border: 1px solid rgba($color: #f3f3f3, $alpha: 0.5) !important;
+        background-color: #fff;
+        padding: 1em !important;
+        vertical-align: top;
 
-        border-left: 1px solid #f3f3f3;
+        @media (max-width: 768px) {
+            padding: 5px 10px !important;
+        }
     }
 
     @media (max-width: 1200px) {
-        thead tr > :not(:first-child),
-        tbody tr > :not(:first-child) {
-            padding-left: 30px;
-        }
-
-        tr {
-            grid-template-columns: 25% 30% 1fr;
-        }
     }
 
     @media (max-width: 1024px) {
-        thead tr > :not(:first-child),
-        tbody tr > :not(:first-child) {
-            padding-left: 0;
-        }
-
-        tr {
-            grid-template-columns: 30% 30% 1fr;
-        }
-    }
-
-    @media (max-width: 768px) {
-        tr {
-            grid-template-columns: 27% 33% 1fr;
-        }
     }
 
     thead {
-        p {
+        p,
+        td {
             color: #484848;
             font-family: Oswald;
             font-weight: 700;
@@ -251,30 +232,34 @@ table {
                 padding: 15px 10px;
             }
         }
-
-        @media (max-width: 768px) {
-            td {
-                display: flex;
-                align-items: center;
-            }
-        }
     }
 
     tbody {
-        p {
+        p,
+        td {
             font-family: Montserrat;
             @include adaptive-value("font-size", 20, 14, 1);
-
-            @media (max-width: 768px) {
-                padding: 5px 10px;
-            }
         }
 
         tr {
-            border-top: 1px solid #f3f3f3;
-
             & > :first-child {
                 color: #0085ff;
+            }
+        }
+
+        & > :first-child {
+            p,
+            td {
+                color: #484848;
+                font-family: Oswald;
+                font-weight: 700;
+                text-transform: uppercase;
+
+                @include adaptive-value("font-size", 20, 16, 1);
+
+                @media (max-width: 768px) {
+                    vertical-align: middle;
+                }
             }
         }
     }
